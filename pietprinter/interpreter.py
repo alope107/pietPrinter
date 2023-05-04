@@ -73,8 +73,3 @@ def gen_string(to_output: str) -> List[str]:
         prog.extend(gen_letter(letter))
     return prog
 
-
-prog = gen_string("Hello, World!")
-print(len(prog))
-interpret(prog, lambda x: print(f"OUTPUT: {x}"))
-
