@@ -55,7 +55,7 @@ def color_to_rgb(color: Tuple[int]) -> Tuple[int]:
 def colors_to_array(colors: List[Tuple]):
     pixels = np.zeros((2, len(colors)+2, 3), dtype=np.uint8)
     pixels[0, 0:len(colors), :] = colors
-    pixels[:, len(colors):, :] = np.full((2, 2, 3), 255)
+    pixels[-2:, -2:, :] = 255
     return pixels
 
 
