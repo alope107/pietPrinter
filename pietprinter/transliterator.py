@@ -52,7 +52,7 @@ def color_to_rgb(color: Tuple[int]) -> Tuple[int]:
     return COLORS[color[0]][color[1]]
 
 
-def colors_to_array(colors):
+def colors_to_array(colors: List[Tuple]):
     pixels = np.zeros((2, len(colors)+2, 3), dtype=np.uint8)
     pixels[0, 0:len(colors), :] = colors
     pixels[:, len(colors):, :] = np.full((2, 2, 3), 255)
@@ -66,8 +66,6 @@ def program_to_image(program: List[str], starting_color: Tuple[int]) -> Image:
     for command in program:
         current_color = next_color(current_color, command)
         colors.append(color_to_rgb(current_color))
-
-    # pix_arr = np.array([pixels], dtype=np.uint8)
 
     return Image.fromarray(colors_to_array(colors), mode="RGB")
     

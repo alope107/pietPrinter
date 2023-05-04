@@ -1,4 +1,4 @@
-from pietprinter.interpreter import gen_string
+from pietprinter.generator import gen_string
 from pietprinter.transliterator import program_to_image
 
 prog = gen_string("Hello, World!")
